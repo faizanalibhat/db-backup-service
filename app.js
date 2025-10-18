@@ -27,9 +27,6 @@ function runCommand(cmd) {
 async function startDbBackup(payload, msg, channel) {
 
     try {
-        // 1️⃣ Connect to MongoDB
-        console.log("🔗 Connecting to MongoDB...");
-        console.log("✅ Connected successfully.");
 
         // 2️⃣ List all databases
         const adminDb = client.db().admin();
@@ -90,6 +87,8 @@ process.on("exit", async () => {
 async function main() {
 
     await client.connect();
+    console.log("🔗 Connecting to MongoDB...");
+    console.log("✅ Connected successfully.");
 
     await mqbroker.consume("dbbackup", "dbbackup.run", startDbBackup)
 }
