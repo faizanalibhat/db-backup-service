@@ -5,7 +5,7 @@ on:
     branches: [ develop, master, sales ]  # Trigger for three branches
 
 env:
-  SERVICE_NAME: apisec
+  SERVICE_NAME: dbbackup 
   REGISTRY: ghcr.io/${{ github.repository_owner }}
 
 jobs:
